@@ -18,3 +18,6 @@ imageResizing = 512
 
 # cat=OpenAI; type=boolean; label=LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:extconf.generate_alt_text_on_file_upload
 generateAltTextOnFileUpload = 1
+
+# cat=OpenAI; type=string; label=LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:extconf.temperature
+temperature = 0.6

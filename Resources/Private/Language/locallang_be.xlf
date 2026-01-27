@@ -25,6 +25,9 @@
             <trans-unit id="extconf.model" resname="extconf.project_id">
                 <source>Selected model, default gpt-4o-mini</source>
             </trans-unit>
+            <trans-unit id="extconf.temperature" resname="extconf.temperature">
+                <source>Temperature: Controls the randomness of the AI's output. Use lower values (0.1 - 0.3) for factual, precise, and consistent answers. Use higher values (0.7 - 1) for creative, diverse, and brainstorming tasks. </source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

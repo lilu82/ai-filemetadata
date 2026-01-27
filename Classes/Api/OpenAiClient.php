@@ -32,6 +32,11 @@ readonly class OpenAiClient
 
     public function buildAltText(string $image, ?string $locale = null): string
     {
+        $temperature = (float)$this->extensionConfiguration->get('ai_filemetadata', 'temperature');
+        if ($temperature < 0.1 || $temperature > 1 ) {
+            $temperature = 0.6;
+        }
+
         $prompt = <<<'GPT'
 Create an alternative text for this image to be used on websites for visually impaired people who cannot see the image.
 Focus on the image's main content and ignore all elements in the image not relevant to understand its message.
@@ -53,6 +58,7 @@ GPT;
 
         $response = $this->openAiClient->chat()->create([
             'model' => $modell,
+            'temperature' => $temperature,
             'messages' => [
                 [
                     'role' => 'user',
