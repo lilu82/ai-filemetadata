@@ -25,6 +25,9 @@
             <trans-unit id="extconf.model" resname="extconf.project_id">
                 <source>Selected model, default gpt-4o-mini</source>
             </trans-unit>
+            <trans-unit id="extconf.alt_text_prompt" resname="extconf.alt_text_prompt">
+                <source>Custom prompt for generating alternative text. Use \n for line breaks.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -40,6 +40,26 @@ configuration. Model for openAI gpt-4o-mini but can be changed to any other mode
 Alternatively [setup AI hosting in the mittwald cloud and add the AI Base URL (API) to the configuration and select
 an active modell](https://www.marketing-factory.com/blog/using-our-typo3-extension-ai-filemetadata-with-mittwalds-ai-hosting/)
 
+### Custom AI Prompt
+
+You can customize the prompt sent to the AI model to generate alternative texts. This allows you to tailor the output to your specific needs or language requirements.
+
+The prompt can be configured in the extension configuration under **Alt Text Prompt**. The default prompt is:
+
+```
+Create an alternative text for this image to be used on websites for visually impaired people who cannot see the image.
+Focus on the image's main content and ignore all elements in the image not relevant to understand its message.
+The text should not exceed 50 words.
+```
+
+To customize the prompt:
+1. Go to **Admin Tools > Settings > Extension Configuration**
+2. Select **ai_filemetadata**
+3. Modify the **Alt Text Prompt** field
+4. Use `\n` for line breaks in your custom prompt
+
+**Note:** The extension automatically appends language-specific instructions when processing images in different languages based on your language mapping configuration.
+
 ### Language Mapping
 
 Since folder do not have a relation to any of the sites default languages you might want to define a mapping for certain folders of your storages. You can do so by add this to your `system/settings.php`:
