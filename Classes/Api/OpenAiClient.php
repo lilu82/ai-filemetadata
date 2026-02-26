@@ -38,10 +38,16 @@ readonly class OpenAiClient
         }
 
         $prompt = <<<'GPT'
+        $prompt = $this->extensionConfiguration->get('ai_filemetadata', 'altTextPrompt');
+        if ($prompt === '') {
+            $prompt = <<<'GPT'
 Create an alternative text for this image to be used on websites for visually impaired people who cannot see the image.
 Focus on the image's main content and ignore all elements in the image not relevant to understand its message.
 The text should not exceed 50 words.
 GPT;
+        } else {
+            $prompt = str_replace('\n', "\n", $prompt);
+        }
 
         if ($locale) {
             $languageEnglishName = \Locale::getDisplayLanguage(\Locale::getPrimaryLanguage($locale), 'en');
@@ -61,11 +67,15 @@ GPT;
             'temperature' => $temperature,
             'messages' => [
                 [
+                    'role' => 'system',
+                    'content' => $prompt,
+                ],
+                [
                     'role' => 'user',
                     'content' => [
                         [
                             'type' => 'text',
-                            'text' => $prompt,
+                            'text' => 'Generate alt text.',
                         ],
                         [
                             'type' => 'image_url',

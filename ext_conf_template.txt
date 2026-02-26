@@ -21,3 +21,5 @@ generateAltTextOnFileUpload = 1
 
 # cat=OpenAI; type=string; label=LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:extconf.temperature
 temperature = 0.6
+# cat=OpenAI; type=text; label=LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:extconf.alt_text_prompt
+altTextPrompt = Create an alternative text for this image to be used on websites for visually impaired people who cannot see the image.\nFocus on the image's main content and ignore all elements in the image not relevant to understand its message.\nThe text should not exceed 50 words.
