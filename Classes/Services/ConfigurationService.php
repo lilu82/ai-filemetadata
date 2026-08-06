@@ -63,6 +63,15 @@ class ConfigurationService
         }
 
         try {
+            $this->generateAltTextInFrontend = (bool)ArrayUtility::getValueByPath(
+                $configuration,
+                'EXTENSIONS/ai_filemetadata/generateAltTextInFrontend'
+            );
+        } catch (\Exception) {
+            $this->generateAltTextInFrontend = true;
+        }
+
+        try {
             $this->enableTokenTracking = (bool)ArrayUtility::getValueByPath(
                 $configuration,
                 'EXTENSIONS/ai_filemetadata/enableTokenTracking'
@@ -129,6 +138,11 @@ class ConfigurationService
     public function getGenerateAltTextOnFileUpload(): bool
     {
         return $this->generateAltTextOnFileUpload;
+    }
+
+    public function generateAltTextInFrontend(): bool
+    {
+        return $this->generateAltTextInFrontend;
     }
 
     public function getEnableTokenTracking(): bool

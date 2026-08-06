@@ -31,6 +31,10 @@ class EnrichFileMetadataAfterCreation
             return;
         }
 
+        if (!$this->configurationService->generateAltTextInFrontend()) {
+            return;
+        }
+
         $metadataRow = $event->getRecord();
         if (($metadataRow['alternative'] ?? '') !== '') {
             return;
