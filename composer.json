@@ -3,7 +3,7 @@
   "name": "mfd/ai-filemetadata",
   "type": "typo3-cms-extension",
   "description": "Automatically generates FAL metadata for files by means of public LLMs",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "keywords": [
     "TYPO3 CMS",
     "Extension",
@@ -18,6 +18,12 @@
       "name": "Christian Spoo",
       "role": "Developer",
       "email": "christian.spoo@marketing-factory.de",
+      "homepage": "https://www.marketing-factory.de"
+    },
+    {
+      "name": "Ingo Schmitt",
+      "role": "Developer",
+      "email": "ingo.schmitt@marketing-factory.de",
       "homepage": "https://www.marketing-factory.de"
     }
   ],
