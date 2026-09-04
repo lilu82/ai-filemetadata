@@ -67,7 +67,6 @@ class GenerateAltTextsCommand extends Command
             // Initialize both so CLI execution does not error out.
             $GLOBALS['BE_USER']->initializeUserSessionManager();
             $sessionProp = new \ReflectionProperty($GLOBALS['BE_USER'], 'userSession');
-            $sessionProp->setAccessible(true);
             if ($sessionProp->getValue($GLOBALS['BE_USER']) === null) {
                 $sessionProp->setValue(
                     $GLOBALS['BE_USER'],
